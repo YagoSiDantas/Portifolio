@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- ==================================================
+         01. CONFIGURAÇÕES, SEO E RECURSOS
+    ================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfólio de Yago Dantas, desenvolvedor web especializado em sites institucionais modernos e responsivos.">
+    <meta name="theme-color" content="#0b1d36">
+    <meta name="robots" content="index, follow">
+
+    <!-- Compartilhamento em redes sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Yago Dantas | Desenvolvedor Web">
+    <meta property="og:description"
+        content="Conheça meus projetos de desenvolvimento web, sites institucionais e interfaces responsivas.">
+    <meta name="twitter:card" content="summary">
+
+    <title>Yago Dantas | Desenvolvedor Web</title>
+
+    <!-- Identidade visual e fontes -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS e JavaScript -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- ==================================================
+         02. ACESSIBILIDADE E CABEÇALHO
+    ================================================== -->
+    <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+
+    <header class="header">
+        <nav class="container navbar" aria-label="Navegação principal">
+            <a href="#inicio" class="logo" aria-label="Yago Dantas - Início">
+                YD<span>.</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#inicio" class="nav-link active">Início</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+
+            <a href="#contato" class="btn btn-primary nav-cta">
+                <i data-lucide="send"></i>
+                Vamos conversar
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================================================
+             03. APRESENTAÇÃO INICIAL
+        ================================================== -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="section-label">Portfólio profissional</span>
+
+                    <h1>
+                        Desenvolvimento web
+                        com <span>propósito.</span>
+                    </h1>
+
+                    <p>
+                        Criação de sites institucionais modernos,
+                        responsivos e focados em experiência,
+                        performance e resultados.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projetos" class="btn btn-primary">
+                            Conheça meus projetos
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+
+                        <a href="#contato" class="btn btn-outline">
+                            <i data-lucide="message-circle"></i>
+                            Entre em contato
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-glow" aria-hidden="true"></div>
+
+                    <div class="hero-laptop">
+                        <img src="assets/images/notebook-codigo.png" alt="Notebook exibindo um editor de código"
+                            class="notebook-image" width="1536" height="1024" fetchpriority="high">
+                    </div>
+
+                    <div class="tech-float tech-html">
+                        <i data-lucide="file-code-2"></i>
+                        <span>HTML</span>
+                    </div>
+
+                    <div class="tech-float tech-css">
+                        <i data-lucide="palette"></i>
+                        <span>CSS</span>
+                    </div>
+
+                    <div class="tech-float tech-js">
+                        <i data-lucide="braces"></i>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             04. SOBRE MIM E TECNOLOGIAS
+        ================================================== -->
+        <section class="about section" id="sobre">
+            <div class="container">
+                <div class="about-header">
+                    <div class="about-heading">
+                        <span class="section-label">Sobre mim</span>
+
+                        <h2>
+                            Transformando ideias em
+                            <span>experiências digitais.</span>
+                        </h2>
+                    </div>
+
+                    <div class="about-intro">
+                        <p>
+                            Sou Yago Dantas, desenvolvedor web com experiência
+                            na criação de sites institucionais e soluções digitais
+                            personalizadas.
+                        </p>
+
+                        <p>
+                            Busco unir design, tecnologia e boas práticas de
+                            desenvolvimento para criar interfaces modernas,
+                            intuitivas e responsivas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-bottom">
+                    <div class="about-highlight">
+                        <div class="highlight-icon">
+                            <i data-lucide="code-2"></i>
+                        </div>
+
+                        <h3>Desenvolvimento com propósito</h3>
+
+                        <p>
+                            Cada projeto é uma oportunidade de transformar
+                            necessidades reais em soluções digitais funcionais,
+                            acessíveis e visualmente consistentes.
+                        </p>
+
+                        <a href="#projetos" class="highlight-link">
+                            Conheça meus projetos
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="technologies">
+                        <div class="technologies-heading">
+                            <div>
+                                <span class="section-label">Conhecimentos</span>
+                                <h3>Tecnologias e ferramentas</h3>
+                            </div>
+
+                            <p>
+                                Ferramentas utilizadas no desenvolvimento
+                                e na personalização de projetos web.
+                            </p>
+                        </div>
+
+                        <div class="technology-grid">
+                            <div class="technology-card">
+                                <i data-lucide="file-code-2"></i>
+                                <span>HTML5</span>
+                            </div>
+
+                            <div class="technology-card">
+                                <i data-lucide="palette"></i>
+                                <span>CSS3</span>
+                            </div>
+
+                            <div class="technology-card">
+                                <i data-lucide="braces"></i>
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="technology-card">
+                                <i data-lucide="blocks"></i>
+                                <span>WordPress</span>
+                            </div>
+
+                            <div class="technology-card">
+                                <i data-lucide="git-branch"></i>
+                                <span>Git</span>
+                            </div>
+
+                            <div class="technology-card">
+                                <i data-lucide="github"></i>
+                                <span>GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             05. PROJETOS EM DESTAQUE
+        ================================================== -->
+        <section class="projects section" id="projetos">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">Projetos</span>
+                        <h2>Projetos em destaque</h2>
+                    </div>
+                    <p>
+                        Conheça os sites em que trabalhei, com foco em
+                        identidade visual, usabilidade e objetivos institucionais.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+
+                        <div class="project-preview">
+                            <img src="assets/images/notebook-optoclin.png" alt="Notebook exibindo o site da Optoclin"
+                                class="notebook-image" width="1536" height="1024" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Optoclin</h3>
+                            <p>
+                                Site institucional de consultório optométrico,
+                                com navegação intuitiva, apresentação de serviços
+                                e foco em acessibilidade.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML</span><span>CSS</span><span>JS</span>
+                            </div>
+                            <a href="https://optoclincg.com.br/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline">
+                                Acessar site <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-preview">
+                            <img src="assets/images/notebook-alianca.png"
+                                alt="Notebook exibindo o site Aliança Congregacional" class="notebook-image"
+                                width="1536" height="1024" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Aliança Congregacional</h3>
+                            <p>
+                                Site institucional com organização de conteúdos,
+                                identidade visual personalizada e navegação responsiva.
+                            </p>
+                            <div class="project-tags">
+                                <span>WordPress</span><span>CSS</span>
+                            </div>
+                            <a href="https://aliancacongregacional.com.br/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline">
+                                Acessar site <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             06. CONTATO E REDES SOCIAIS
+             ATENÇÃO: substituir e-mail e links provisórios.
+        ================================================== -->
+        <section class="contact section" id="contato">
+            <div class="container contact-grid">
+                <div>
+                    <span class="section-label">Vamos conversar?</span>
+                    <h2>Tem um projeto em mente?</h2>
+                    <p>
+                        Vamos transformar sua ideia em um site profissional,
+                        moderno e eficiente.
+                    </p>
+                </div>
+
+                <div class="contact-actions">
+                    <a href="mailto:SEU_EMAIL@exemplo.com" class="btn btn-primary">
+                        <i data-lucide="send"></i>
+                        Entrar em contato
+                    </a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="mailto:SEU_EMAIL@exemplo.com" aria-label="E-mail">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================================================
+         07. RODAPÉ
+    ================================================== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#inicio" class="logo">YD<span>.</span></a>
+            <p>© <span id="year"></span> Yago Dantas. Todos os direitos reservados.</p>
+            <a href="#inicio" class="back-top" aria-label="Voltar ao início">
+                <i data-lucide="arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
