@@ -1,967 +1,1599 @@
 /* ==========================================================
+
    01. VARIÁVEIS E ESTILOS GLOBAIS
+
    ========================================================== */
+
 :root {
+
     --primary: #0757ed;
+
     --primary-hover: #0345c4;
+
     --navy: #0b1d36;
+
     --navy-light: #102d54;
+
     --text: #111827;
+
     --muted: #526178;
+
     --border: #dbe5f2;
+
     --white: #ffffff;
+
     --radius: 18px;
+
     --container: 1180px;
+
 }
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 html {
+
     scroll-behavior: smooth;
+
     scroll-padding-top: 90px;
+
 }
 
 body {
+
     font-family: "Inter", sans-serif;
+
     color: var(--text);
+
     background: var(--white);
+
     line-height: 1.6;
+
 }
 
 a {
+
     color: inherit;
+
     text-decoration: none;
+
 }
 
 button {
+
     font: inherit;
+
     cursor: pointer;
+
 }
 
 img {
+
     display: block;
+
     max-width: 100%;
+
 }
 
 .container {
+
     width: min(calc(100% - 48px), var(--container));
+
     margin-inline: auto;
+
 }
 
 .section {
+
     padding: 80px 0;
+
 }
 
 h1,
+
 h2,
+
 h3 {
+
     line-height: 1.15;
+
     letter-spacing: -0.04em;
+
 }
 
 h1 span,
+
 h2 span {
+
     color: var(--primary);
+
 }
 
 .section-label {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 12px;
+
     font-size: 12px;
+
     font-weight: 800;
+
     text-transform: uppercase;
+
     letter-spacing: .13em;
+
 }
 
 .section-label::before {
+
     content: "";
+
     width: 32px;
+
     height: 4px;
+
     border-radius: 4px;
+
     background: var(--primary);
+
 }
 
 /* ==========================================================
+
    02. BOTÕES E ELEMENTOS COMPARTILHADOS
+
    ========================================================== */
+
 .btn {
+
     display: inline-flex;
+
     justify-content: center;
+
     align-items: center;
+
     gap: 10px;
+
     min-height: 46px;
+
     padding: 12px 22px;
+
     border: 1px solid transparent;
+
     border-radius: 12px;
+
     font-size: 14px;
+
     font-weight: 700;
+
     transition: background .2s, transform .2s;
+
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-}
 
-.btn svg {
-    width: 18px;
-    height: 18px;
+    transform: translateY(-2px);
+
 }
 
 .btn-primary {
+
     color: white;
+
     background: linear-gradient(135deg, #147bff, #0346df);
+
 }
 
 .btn-primary:hover {
+
     background: var(--primary-hover);
+
 }
 
 .btn-outline {
+
     color: var(--navy);
+
     border-color: #a8bbd4;
+
 }
 
 .btn-outline:hover {
+
     background: #eaf3ff;
+
 }
 
 .skip-link {
+
     position: absolute;
+
     top: -60px;
+
     left: 20px;
+
     z-index: 100;
+
     padding: 10px;
+
     background: white;
+
 }
 
 .skip-link:focus {
+
     top: 10px;
+
 }
 
 /* ==========================================================
+
    03. CABEÇALHO E NAVEGAÇÃO
+
    ========================================================== */
+
 .header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 50;
+
     background: rgba(255, 255, 255, .94);
+
     backdrop-filter: blur(14px);
+
     border-bottom: 1px solid var(--border);
+
 }
 
 /* Cabeçalho durante a rolagem */
 
 .header.scrolled {
+
     background: rgba(255, 255, 255, 0.98);
+
     box-shadow: 0 8px 30px rgba(11, 29, 54, 0.08);
+
 }
 
 .header {
+
     transition:
+
         background 0.3s ease,
+
         box-shadow 0.3s ease;
+
 }
 
-
 .navbar {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     min-height: 76px;
+
     gap: 24px;
+
 }
 
 .logo {
+
     font-size: 35px;
+
     font-weight: 800;
+
     letter-spacing: -.09em;
+
     line-height: 1;
+
 }
 
 .logo span {
+
     color: var(--primary);
+
 }
 
 .nav-links {
+
     display: flex;
+
     align-items: center;
+
     gap: 34px;
+
 }
 
 .nav-link {
+
     font-size: 14px;
+
     font-weight: 600;
+
     transition: color .2s;
+
 }
 
 .nav-link:hover,
+
 .nav-link.active {
+
     color: var(--primary);
+
 }
 
 .menu-toggle {
+
     display: none;
+
     border: 0;
+
     background: transparent;
+
 }
 
 /* ==========================================================
+
    04. APRESENTAÇÃO (HERO) E NOTEBOOK PRINCIPAL
+
    ========================================================== */
+
 .hero {
+
     overflow: hidden;
+
     background: linear-gradient(115deg, #f8fbff 10%, #e7f2ff 65%, #c7e2ff);
+
 }
 
 .hero-grid {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
     align-items: center;
+
     gap: 50px;
+
     min-height: 490px;
+
     padding-block: 65px;
+
 }
 
 .hero h1 {
+
     margin: 22px 0 18px;
+
     font-size: clamp(38px, 4.2vw, 62px);
+
     font-weight: 800;
+
 }
 
 .hero-content>p {
+
     max-width: 530px;
+
     color: var(--muted);
+
     font-size: 17px;
+
 }
 
 .hero-actions {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 14px;
+
     margin-top: 28px;
+
 }
 
 .hero-visual {
+
     position: relative;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     min-width: 0;
+
     min-height: 360px;
+
     isolation: isolate;
+
 }
 
 .visual-glow {
+
     position: absolute;
+
     width: 90%;
+
     height: 90%;
+
     border-radius: 45% 55% 60% 40%;
+
     background: linear-gradient(135deg, #8bc7ff, #0757ed);
+
     filter: blur(3px);
+
     opacity: .25;
+
     transform: rotate(-18deg);
+
 }
 
 .hero-laptop {
+
     position: relative;
+
     z-index: 1;
+
     width: 100%;
+
     max-width: 670px;
+
 }
 
 .notebook-image {
+
     display: block;
+
     width: 100%;
+
     height: auto;
+
     object-fit: contain;
+
 }
 
 .hero-laptop .notebook-image {
+
     filter: drop-shadow(0 14px 18px rgba(6, 37, 81, .15));
+
 }
 
 .tech-float {
+
     position: absolute;
+
     z-index: 3;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     gap: 5px;
+
     min-width: 84px;
+
     padding: 14px;
+
     border: 1px solid #e2edfa;
+
     border-radius: 16px;
+
     background: rgba(255, 255, 255, .95);
+
     box-shadow: 0 12px 25px rgba(8, 45, 90, .12);
+
     font-size: 12px;
+
     font-weight: 700;
-}
 
-.tech-float svg {
-    width: 28px;
-    height: 28px;
-    color: var(--primary);
 }
-
 
 /* Logotipos flutuantes da apresentação */
 
 .tech-float img {
+
     display: block;
+
     width: 28px;
+
     height: 28px;
+
     object-fit: contain;
+
 }
 
 .tech-html {
+
     top: 12%;
+
     right: 0;
+
 }
 
 .tech-css {
+
     top: 43%;
+
     right: -3%;
+
 }
 
 .tech-js {
+
     bottom: 3%;
+
     right: 8%;
+
 }
 
 /* ==========================================================
+
    05. SOBRE MIM E TECNOLOGIAS
+
    HTML: #sobre, .about-header, .about-bottom
+
    ========================================================== */
+
 .about {
+
     background: #f8fbff;
+
 }
 
 .about-header {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     align-items: center;
+
     gap: 60px;
+
     margin-bottom: 45px;
+
 }
 
 .about-heading h2 {
+
     max-width: 520px;
+
     margin-top: 18px;
+
     font-size: clamp(32px, 3.2vw, 46px);
+
 }
 
 .about-intro {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
+
     padding-left: 28px;
+
     border-left: 2px solid #d8e5f5;
+
 }
 
 .about-intro p {
+
     color: var(--muted);
+
     font-size: 15px;
+
     line-height: 1.8;
+
 }
 
 .about-bottom {
+
     display: grid;
+
     grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+
     gap: 24px;
+
 }
 
 .about-highlight {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     padding: 35px;
+
     border-radius: 20px;
+
     color: var(--white);
+
     background: linear-gradient(135deg, var(--navy), #123a70);
+
 }
 
 .highlight-icon {
-    display: grid;
-    place-items: center;
-    width: 54px;
-    height: 54px;
-    margin-bottom: 25px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, .1);
-}
 
-.highlight-icon svg {
-    width: 27px;
-    height: 27px;
-    color: #74b8ff;
+    display: grid;
+
+    place-items: center;
+
+    width: 54px;
+
+    height: 54px;
+
+    margin-bottom: 25px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, .1);
+
 }
 
 .about-highlight h3 {
+
     margin-bottom: 15px;
+
     font-size: 23px;
+
 }
 
 .about-highlight p {
+
     color: #cbdcf0;
+
     font-size: 14px;
+
     line-height: 1.8;
+
 }
 
 .highlight-link {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
+
     margin-top: auto;
+
     padding-top: 25px;
+
     color: #86c4ff;
+
     font-size: 13px;
+
     font-weight: 700;
+
     transition: gap .2s ease;
+
 }
 
 .highlight-link:hover {
-    gap: 15px;
-}
 
-.highlight-link svg {
-    width: 17px;
-    height: 17px;
+    gap: 15px;
+
 }
 
 .technologies {
+
     min-width: 0;
+
     padding: 30px;
+
     border: 1px solid #e2eaf5;
+
     border-radius: 20px;
+
     background: var(--white);
+
 }
 
 .technologies-heading {
+
     display: flex;
+
     align-items: flex-end;
+
     justify-content: space-between;
+
     gap: 20px;
+
     margin-bottom: 25px;
+
 }
 
 .technologies-heading h3 {
+
     margin-top: 12px;
+
     font-size: 23px;
+
 }
 
 .technologies-heading p {
+
     max-width: 200px;
+
     color: var(--muted);
+
     font-size: 12px;
+
 }
 
 .technology-grid {
+
     display: grid;
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 12px;
+
 }
 
 .technology-card {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 12px;
+
     min-width: 0;
+
     min-height: 105px;
+
     padding: 16px;
+
     border: 1px solid #e4ecf7;
+
     border-radius: 14px;
+
     background: #f8fbff;
+
     transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+
 }
 
 .technology-card:hover {
-    transform: translateY(-4px);
-    border-color: #a7caff;
-    box-shadow: 0 10px 25px rgba(7, 87, 237, .08);
-}
 
-.technology-card svg {
-    width: 29px;
-    height: 29px;
-    color: var(--primary);
+    transform: translateY(-4px);
+
+    border-color: #a7caff;
+
+    box-shadow: 0 10px 25px rgba(7, 87, 237, .08);
+
 }
 
 /* ==================================================
+
    ÍCONES OFICIAIS DAS TECNOLOGIAS
-================================================== */
+
+\================================================== */
 
 .technology-card img {
+
     display: block;
+
     width: 36px;
+
     height: 36px;
+
     object-fit: contain;
+
     transition: transform 0.25s ease;
+
 }
 
 .technology-card:hover img {
+
     transform: scale(1.1);
+
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .technology-card img {
+
         transition: none;
+
     }
 
     .technology-card:hover img {
+
         transform: none;
+
     }
+
 }
 
-
 .technology-card span {
+
     color: var(--navy);
+
     font-size: 12px;
+
     font-weight: 700;
+
 }
 
 /* ==========================================================
+
    06. PROJETOS EM DESTAQUE E IMAGENS DOS NOTEBOOKS
+
    ========================================================== */
+
 .projects {
+
     color: white;
+
     background: linear-gradient(135deg, var(--navy), var(--navy-light));
+
 }
 
 .section-heading {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: end;
+
     gap: 40px;
+
     margin-bottom: 32px;
+
 }
 
 .section-heading h2 {
+
     margin-top: 12px;
+
     font-size: clamp(30px, 3vw, 42px);
+
 }
 
 .section-heading p {
+
     max-width: 430px;
+
     font-size: 14px;
+
     color: #d6e4f5;
+
 }
 
 .projects-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 22px;
+
 }
 
 .project-card {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr);
+
     align-items: center;
+
     min-height: 285px;
+
     overflow: hidden;
+
     border-radius: var(--radius);
+
     color: var(--navy);
+
     background: #eef6ff;
+
 }
 
 .project-card:nth-child(2) {
+
     background: #fff2e4;
+
 }
 
 .project-preview {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     width: 100%;
+
     min-width: 0;
+
     padding: 16px 0 16px 12px;
+
 }
 
 .project-preview .notebook-image {
+
     display: block;
+
     width: 100%;
+
     max-width: 100%;
+
     height: auto;
+
     aspect-ratio: auto;
+
     object-fit: contain;
+
     border: 0;
+
     border-radius: 0;
+
     box-shadow: none;
+
     transition: transform .3s ease;
+
 }
 
 .project-card:hover .notebook-image {
+
     transform: translateY(-4px);
+
 }
 
 .project-info {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     justify-content: center;
+
     min-width: 0;
+
     padding: 24px 20px;
+
 }
 
 .project-info h3 {
+
     margin-bottom: 12px;
+
     font-size: 23px;
+
     overflow-wrap: anywhere;
+
 }
 
 .project-info p {
+
     font-size: 12px;
+
     line-height: 1.6;
+
 }
 
 .project-tags {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 7px;
+
     margin: 16px 0;
+
 }
 
 .project-tags span {
+
     padding: 4px 10px;
+
     border-radius: 20px;
+
     background: #d7e9fb;
+
     font-size: 11px;
+
     font-weight: 700;
+
 }
 
 .project-info .btn {
+
     margin-top: 12px;
+
     min-height: 40px;
+
     padding: 9px 13px;
+
     font-size: 12px;
+
 }
 
 /* ==========================================================
+
    07. CONTATO E RODAPÉ
+
    ========================================================== */
+
 .contact {
+
     color: white;
+
     background: #091a32;
+
 }
 
 .contact-grid {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 50px;
+
 }
 
 .contact h2 {
+
     margin: 12px 0;
+
     font-size: clamp(29px, 3vw, 40px);
+
 }
 
 .contact p {
+
     max-width: 480px;
+
     color: #d1def0;
+
 }
 
 .contact-actions,
+
 .social-links {
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
 }
 
 .social-links a,
+
 .back-top {
+
     display: grid;
+
     place-items: center;
+
     width: 43px;
+
     height: 43px;
+
     border: 1px solid #8294ad;
+
     border-radius: 11px;
+
     transition: background .2s;
+
 }
 
 .social-links a:hover,
-.back-top:hover {
-    background: #19436f;
-}
 
+.back-top:hover {
+
+    background: #19436f;
+
+}
 
 /* Interações da seção de contato */
 
 .contact-actions .btn {
+
     transition:
+
         transform 0.25s ease,
+
         box-shadow 0.25s ease;
+
 }
 
 .contact-actions .btn:hover {
+
     transform: translateY(-3px);
+
     box-shadow: 0 12px 28px rgba(20, 123, 255, 0.2);
+
 }
 
 .social-links a {
+
     transition:
+
         transform 0.25s ease,
+
         background 0.25s ease,
+
         border-color 0.25s ease;
+
 }
 
 .social-links a:hover {
+
     transform: translateY(-3px);
+
     border-color: #75b6ff;
+
     background: #19436f;
+
 }
 
 /* Destaque de foco para navegação por teclado */
 
 .nav-link:focus-visible,
+
 .social-links a:focus-visible,
+
 .contact-actions .btn:focus-visible {
+
     outline: 3px solid #75b6ff;
+
     outline-offset: 4px;
+
 }
 
-
 .footer {
+
     color: white;
+
     background: #07162b;
+
     border-top: 1px solid #344760;
+
 }
 
 .footer-content {
+
     display: flex;
+
     align-items: center;
+
     gap: 25px;
+
     padding-block: 22px;
+
 }
 
 .footer p {
+
     font-size: 12px;
+
     color: #d4e1f0;
+
 }
 
 .back-top {
+
     margin-left: auto;
+
     border-radius: 50%;
+
 }
 
 /* ==========================================================
-   08. ANIMAÇÕES E INTERAÇÕES
-   JS adiciona .reveal e .visible aos elementos observados.
+   08. ÍCONES BOOTSTRAP
    ========================================================== */
+
+.btn .bi {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.social-links .bi,
+.back-top .bi {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.menu-toggle .bi {
+    font-size: 28px;
+    line-height: 1;
+    color: var(--navy);
+}
+
+.highlight-icon .bi {
+    font-size: 27px;
+    color: #74b8ff;
+}
+
+.highlight-link .bi {
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* ==========================================================
+
+   09. ANIMAÇÕES E INTERAÇÕES
+
+   JS adiciona .reveal e .visible aos elementos observados.
+
+   ========================================================== */
+
 .reveal {
+
     opacity: 0;
+
     transform: translateY(28px);
+
     transition: opacity .7s ease, transform .7s ease;
+
 }
 
 .reveal.visible {
+
     opacity: 1;
+
     transform: translateY(0);
+
 }
 
 .project-card {
+
     transition: box-shadow .3s ease, transform .3s ease;
+
 }
 
 .project-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 20px 45px rgba(0, 0, 0, .15);
+
 }
 
 /* ==========================================================
-   09. RESPONSIVIDADE
+
+   10. RESPONSIVIDADE
+
    ========================================================== */
+
 @media (max-width: 1050px) {
+
     .projects-grid {
+
         grid-template-columns: 1fr;
+
     }
 
     .project-card {
+
         grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+
     }
+
 }
 
 @media (max-width: 900px) {
 
     .about-header,
+
     .about-bottom {
+
         grid-template-columns: 1fr;
+
         gap: 30px;
+
     }
 
     .about-intro {
+
         padding-left: 0;
+
         border-left: 0;
+
     }
+
 }
 
 @media (max-width: 768px) {
+
     .container {
+
         width: min(calc(100% - 32px), var(--container));
+
     }
 
     .section {
+
         padding: 60px 0;
+
     }
 
     .menu-toggle {
+
         display: block;
+
         margin-left: auto;
+
     }
 
     .nav-cta {
+
         display: none;
+
     }
 
     .nav-links {
+
         display: none;
+
         position: absolute;
+
         top: 76px;
+
         left: 0;
+
         right: 0;
+
         flex-direction: column;
+
         align-items: stretch;
+
         gap: 0;
+
         padding: 12px 24px;
+
         background: var(--white);
+
         box-shadow: 0 15px 25px rgba(0, 0, 0, .08);
+
     }
 
     .nav-links.open {
+
         display: flex;
+
     }
 
     .nav-link {
+
         padding: 13px 0;
+
     }
 
     .hero-grid {
+
         grid-template-columns: 1fr;
+
         gap: 15px;
+
         padding-block: 55px;
+
     }
 
     .hero-visual {
+
         min-height: 310px;
+
     }
 
     .hero-laptop {
+
         width: 100%;
+
     }
 
     .section-heading,
+
     .contact-grid,
+
     .contact-actions {
+
         align-items: flex-start;
+
         flex-direction: column;
+
     }
 
     .project-card {
+
         grid-template-columns: 1fr;
+
     }
 
     .project-preview {
+
         padding: 20px 20px 0;
+
     }
 
     .project-preview .notebook-image {
+
         width: 100%;
+
         max-width: 480px;
+
     }
 
     .project-info {
+
         gap: 8px;
+
         padding: 20px 24px 28px;
+
     }
 
     .project-info .btn {
+
         margin-top: 8px;
+
     }
 
     .footer-content {
+
         flex-wrap: wrap;
+
     }
+
 }
 
 @media (max-width: 480px) {
 
     .about-highlight,
+
     .technologies {
+
         padding: 24px;
+
     }
 
     .technologies-heading {
+
         flex-direction: column;
+
         align-items: flex-start;
+
     }
 
     .technology-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
 
     .tech-float {
-        min-width: 64px;
-        padding: 9px;
-        font-size: 10px;
-    }
 
-    .tech-float svg {
-        width: 22px;
-        height: 22px;
+        min-width: 64px;
+
+        padding: 9px;
+
+        font-size: 10px;
+
     }
 
     .tech-css {
+
         right: 0;
+
     }
+
 }
 
 /* ==========================================================
-   10. ACESSIBILIDADE — MOVIMENTO REDUZIDO
+
+   11. ACESSIBILIDADE — MOVIMENTO REDUZIDO
+
    ========================================================== */
+
 @media (prefers-reduced-motion: reduce) {
+
     html {
+
         scroll-behavior: auto;
+
     }
 
     *,
+
     *::before,
+
     *::after {
+
         animation-duration: .01ms !important;
+
         transition-duration: .01ms !important;
+
     }
 
     .reveal {
+
         opacity: 1;
+
         transform: none;
+
     }
 
     .project-card:hover,
+
     .technology-card:hover {
+
         transform: none;
+
     }
 
     .header,
+
     .contact-actions .btn,
+
     .social-links a {
+
         transition: none;
+
     }
 
     .contact-actions .btn:hover,
+
     .social-links a:hover {
+
         transform: none;
+
     }
 
 }
 
 /* Foco visível para navegação por teclado */
+
 :where(a, button):focus-visible {
+
     outline: 3px solid var(--primary);
+
     outline-offset: 3px;
+
 }
