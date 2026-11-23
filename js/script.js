@@ -1,12 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     // ==================================================
     // 01. ÍCONES LUCIDE
     // ==================================================
 
-    if (window.lucide) {
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
         window.lucide.createIcons();
+    } else {
+        console.error("Lucide não foi carregado corretamente.");
     }
 
 
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeMenu();
             }
         });
-    } 
+    }
 
     // ==================================================
     // 02.1. EFEITO DO CABEÇALHO NA ROLAGEM
@@ -78,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             passive: true
         });
     }
-    
+
     // ==================================================
     // 03. DESTAQUE DA SEÇÃO ATIVA NO MENU
     // ==================================================
