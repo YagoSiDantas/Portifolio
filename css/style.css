@@ -309,6 +309,16 @@ h2 span {
     color: var(--primary);
 }
 
+
+/* Logotipos flutuantes da apresentação */
+
+.tech-float img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
 .tech-html {
     top: 12%;
     right: 0;
@@ -483,6 +493,33 @@ h2 span {
     height: 29px;
     color: var(--primary);
 }
+
+/* ==================================================
+   ÍCONES OFICIAIS DAS TECNOLOGIAS
+================================================== */
+
+.technology-card img {
+    display: block;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.technology-card:hover img {
+    transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .technology-card img {
+        transition: none;
+    }
+
+    .technology-card:hover img {
+        transform: none;
+    }
+}
+
 
 .technology-card span {
     color: var(--navy);
